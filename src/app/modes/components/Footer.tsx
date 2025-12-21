@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image"
 import { ChartLineIcon } from "lucide-react";
 import styles from "./footer.module.css"
+import { HEATBOARD_URL } from "@/app/constants/columns";
 
 
 const iconSize = 18;
@@ -37,7 +38,7 @@ export default function Footer() {
             </div>
             <div className={styles.category}>
                 <h4>Services</h4>
-                <Link href="https://github.com/Les-Chauffagistes">
+                <Link href={HEATBOARD_URL}>
                     <ChartLineIcon size={iconSize} />
                     <p>Dashboard</p>
                 </Link>

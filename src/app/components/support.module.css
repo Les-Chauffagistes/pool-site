@@ -1,0 +1,6 @@
+.suport .card {
+    border: 1px solid var(--bg-blue);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--bg-blue);
+}

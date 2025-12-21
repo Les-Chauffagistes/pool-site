@@ -16,6 +16,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <meta name="theme-color" content="#cc640eff" />
+        <meta name="og:image:secure_url" content="/brand.jpg" />
       </head>
       <body>
         {children}

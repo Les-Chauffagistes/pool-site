@@ -1,28 +1,43 @@
+import { BanknoteX, FileChartPie, Handshake, Heater, Landmark } from "lucide-react";
 import styles from "../page.module.css";
+import { ComponentType } from "react";
 
 export default function Differentiation() {
+
+  type Item = {
+    label: string;
+    Icon: ComponentType;
+  };
+
+  const ITEMS: Item[] = [
+    { label: "0 % de frais sur les blocs", Icon: BanknoteX },
+    { label: "Valorisation réelle de la chaleur", Icon: Heater },
+    { label: "Projet communautaire français", Icon: Handshake },
+    { label: "Transparence des statistiques", Icon: FileChartPie },
+    { label: "Aucun intermédiaire financier", Icon: Landmark },
+  ];
+
   return (
     <section>
       <div className={styles.container}>
         <h2>Ce qui nous distingue</h2>
 
-        <div className={styles.grid + " " + styles.grid3} style={{ marginTop: 32 }}>
-          {[
-            "0 % de frais sur les blocs",
-            "Valorisation réelle de la chaleur",
-            "Projet communautaire français",
-            "Transparence des statistiques",
-            "Aucun intermédiaire financier",
-          ].map((item) => (
-            <div
-              key={item}
-              style={{
-                background: "var(--bg-soft)",
-                padding: 24,
-                borderRadius: "var(--radius)",
-              }}
-            >
-              <p>{item}</p>
+        <div className={`${styles.grid} ${styles.grid3} ${styles.spaced}`} style={{
+          marginTop: 32
+        }}>
+          {ITEMS.map(({ label, Icon }) => (
+            <div key={label} className={styles.card} style={{
+
+              background: "var(--bg-soft)",
+              padding: 24,
+              borderRadius: "var(--radius)",
+              display: "flex",
+              alignItems: "center",
+              gap: 15
+
+            }}>
+              <Icon />
+              <p>{label}</p>
             </div>
           ))}
         </div>

@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model rewards {
+  year        Int
+  month       Int
+  reward_name String
+
+  @@id([year, month, reward_name], map: "rewards_pk")
+}

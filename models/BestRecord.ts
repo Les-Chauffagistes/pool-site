@@ -1,6 +1,6 @@
 export interface BestRecord {
     month: string
-    sdiff: string
-    username: string
-    epoch: string
+    sdiff: number
+    address: string
+    epoch: number
 }

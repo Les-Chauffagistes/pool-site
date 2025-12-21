@@ -16,8 +16,9 @@ export default function Code({ children, notCopiable = false }: { children: Reac
             display: "flex",
             alignItems: "center",
             gap: 10,
-            width: "fit-content"
-        }}>
+            width: "fit-content",
+            maxWidth: "100%",
+        }} className="break">
             {children}
             {!notCopiable && <button style={{ color: "white", backgroundColor: "transparent", border: "none", cursor: "pointer" }} onClick={async () => {
                 await navigator.clipboard.writeText(children!.toString())
