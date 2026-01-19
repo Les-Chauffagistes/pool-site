@@ -2,7 +2,6 @@
 
 import { CSSProperties } from "react"
 import NoisyBackground from "@/app/components/NoisyBackground"
-import "./page.module.css"
 import { Globe, User, Users } from "lucide-react"
 import Checked from "./components/Checked"
 import Image from "next/image"
@@ -44,7 +43,9 @@ export default function Page() {
     return (
         <main style={{ flex: 1, display: "flex", flexDirection: "column" }} className={styles.modes}>
             <div style={{ display: "flex", alignItems: "center", gap: 20, padding: 20 }}>
-                <Image src="/icon-squared-dark.png" alt="icon" width={100} height={100}></Image>
+                <Link href="/">
+                    <Image src="/brand-icon.png" alt="icon" width={100} height={100}></Image>
+                </Link>
                 <div>
                     <h1 className={styles.title}>Les Chauffagistes ont tout ce qu&apos;il vous faut</h1>
                     <p>Minez du Bitcoin seul, avec vos amis, ou avec la communauté</p>

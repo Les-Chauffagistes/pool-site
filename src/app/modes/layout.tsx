@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Footer from "./components/Footer";
+
 
 export const metadata: Metadata = {
   title: "Rejoindre Les Chauffagistes",
@@ -11,9 +11,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
+    <>
       {children}
-      <Footer />
-    </div>
+    </>
   );
 }

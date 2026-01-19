@@ -11,7 +11,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div>
-                <p>Chauffagistes Pool </p>
+                <Link href="/"><p>Chauffagistes Pool </p></Link>
                 <p style={{ textAlign: "center", marginTop: 10 }}>© 2024 — 2025</p>
             </div>
             <div className={styles.category} style={{ borderLeft: "solid 1px rgba(255, 255, 255, 0.47)", paddingLeft: 50 }}>
