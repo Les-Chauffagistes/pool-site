@@ -1,6 +1,6 @@
 import Image from "next/image";
-import styles from "../page.module.css";
-import Code from "./Code";
+import styles from "../pool.module.css";
+import Code from "@/app/components/Code";
 import componentStyles from "./support.module.css";
 
 export default function Support() {

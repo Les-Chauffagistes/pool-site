@@ -1,5 +1,4 @@
-import NoisyBackground from "./NoisyBackground";
-import styles from "../page.module.css";
+import styles from "../pool.module.css";
 
 
 export default function Hero() {

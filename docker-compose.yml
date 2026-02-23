@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:18.1-alpine3.23
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: chauffagistes
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432" # Port de la db
+
+  app:
+    image: chauffagistes-site:v1
+    container_name: app
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/chauffagistes
+    restart: unless-stopped
+    ports:
+       - "3002:3002" # Port de l'application
+
+  # nginx:
+  #   image: nginx:stable
+  #   container_name: nginx
+  #   depends_on:
+  #     - app
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   restart: unless-stopped
+
+volumes:
+  pgdata:

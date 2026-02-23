@@ -1,5 +1,5 @@
 import { BanknoteX, FileChartPie, Handshake, Heater, Landmark } from "lucide-react";
-import styles from "../page.module.css";
+import styles from "../pool.module.css";
 import { ComponentType } from "react";
 
 export default function Differentiation() {

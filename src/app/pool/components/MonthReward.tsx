@@ -1,10 +1,10 @@
-import TimeFormatter from "../../../lib/TimeFormatter";
-import UnitConverter from "../../../lib/UnitConverter";
-import { BestRecord } from "../../../models/BestRecord";
-import styles from "../page.module.css";
+import TimeFormatter from "@/../lib/TimeFormatter";
+import UnitConverter from "@/../lib/UnitConverter";
+import { BestRecord } from "@/../models/BestRecord";
+import styles from "../pool.module.css";
 
 
-export default function MonthReward({ record, month: month, year, reward }: { record?: BestRecord, month: number, year: number, reward: string[] }) {
+export default function MonthReward({ record, month, year, reward }: Readonly<{ record?: BestRecord, month: number, year: number, reward: string[] }>) {
     const fullDate = new Date(year, month - 1);
     const isThisMonth = fullDate.getMonth() === new Date().getMonth();
 
@@ -42,7 +42,7 @@ export default function MonthReward({ record, month: month, year, reward }: { re
                 alignItems: "center",
                 gap: 10
             }}>
-                <p>{record &&record.address}</p>
+                <p>{record?.address}</p>
                 <p>{record && TimeFormatter.dayHourMinutes(new Date(record.epoch * 1000))}</p>
             </div>
             <h4 style={{

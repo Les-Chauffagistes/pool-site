@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Pool } from "../../../models/Pool";
-import { getPoolBaseStats } from "../api";
-import UnitConverter from "../../../lib/UnitConverter";
-import styles from "../page.module.css"
+import { Pool } from "@/../models/Pool";
+import { getPoolBaseStats } from "@/app/api";
+import UnitConverter from "@/../lib/UnitConverter";
+import styles from "../pool.module.css"
 
 export default function Stats() {
   const [poolStats, setPoolStats] = useState<Pool | null>(null);

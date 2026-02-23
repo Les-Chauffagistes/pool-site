@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "../page.module.css";
-import { BestRecord } from "../../../models/BestRecord";
+import styles from "../pool.module.css";
+import { BestRecord } from "../../../../models/BestRecord";
 import MonthReward from "./MonthReward";
-import { getMonthlyBests, getRewards } from "../api";
-import { Reward } from "../../../models/API Payloads/Reward";
+import { getMonthlyBests, getRewards } from "../../api";
+import { Reward } from "../../../../models/API Payloads/Reward";
 
 type MonthKey = string;
 
@@ -58,9 +58,9 @@ export default function Community() {
 
     return Array.from(map.values()).sort(
       (a, b) =>
-        a.year !== b.year
-          ? a.year - b.year
-          : a.month - b.month
+        a.year === b.year
+          ? a.month - b.month
+          : a.year - b.year
     );
   };
 

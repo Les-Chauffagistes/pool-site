@@ -1,4 +1,4 @@
-import styles from "../page.module.css"
+import styles from "../pool.module.css"
 
 export default function QuickStart() {
   return (

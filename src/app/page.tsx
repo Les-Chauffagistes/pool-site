@@ -1,28 +1,18 @@
-import Hero from "@/app/components/Hero";
-import Stats from "@/app/components/Stats";
-import QuickStart from "@/app/components/QuickStart";
-import Why from "@/app/components/Why";
-import Differentiation from "@/app/components/Differentiation";
-import Community from "@/app/components/Community";
-import Support from "@/app/components/Support";
-import Partners from "@/app/components/Partners";
-import NoisyBackground from "./components/NoisyBackground";
-
+import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
-  return (
-    <main className={styles.page}>
-      <NoisyBackground noiseOpacity={45}>
-        <Hero />
-        <Stats />
-      </NoisyBackground>
-      <QuickStart />
-      <Why />
-      <Differentiation />
-      <Community />
-      <Support />
-      <Partners />
+export default function HomePage() {
+    return <main className={styles.page}>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            flex: 1,
+            gap: 20
+        }}>
+            <Image src="/brand-icon.png" width={200} height={200} alt="Chauffagistes" />
+            <p>Insérer ici super page de présentation des Chauffagistes</p>
+        </div>
     </main>
-  );
 }
