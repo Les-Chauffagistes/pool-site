@@ -18,7 +18,7 @@ export default function Differentiation() {
   ];
 
   return (
-    <section>
+    <section style={{ background: "var(--bg-alt)" }}>
       <div className={styles.container}>
         <h2>Ce qui nous distingue</h2>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import NoisyBackground from "../components/NoisyBackground";
-import Code from "../../components/Code";
+import Code from "../../../components/Code";
 import NavigationBar from "../components/NavigationBar";
 
 export default function Solo() {

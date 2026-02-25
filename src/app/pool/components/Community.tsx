@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "../pool.module.css";
-import { BestRecord } from "../../../../models/BestRecord";
+import { BestRecord } from "../../../../models/PoolService/BestRecord";
 import MonthReward from "./MonthReward";
 import { getMonthlyBests, getRewards } from "../../api";
 import { Reward } from "../../../../models/API Payloads/Reward";
@@ -89,7 +89,7 @@ export default function Community() {
   }, []);
 
   return (
-    <section style={{ background: "var(--bg-alt)" }}>
+    <section>
       <div className={styles.container}>
         <h2>Une communauté vivante</h2>
 

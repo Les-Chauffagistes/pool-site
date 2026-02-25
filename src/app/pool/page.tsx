@@ -18,11 +18,11 @@ export default function Home() {
         <Stats />
       </NoisyBackground>
       <QuickStart />
+      <Partners />
       <Why />
       <Differentiation />
       <Community />
       <Support />
-      <Partners />
     </main>
   );
 }

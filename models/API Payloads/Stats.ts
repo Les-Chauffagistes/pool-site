@@ -1,5 +1,5 @@
-import { Hashrates } from "../Hashrates"
-import { Worker } from "../Worker"
+import { Hashrates } from "../PoolService/Hashrates"
+import { Worker } from "../PoolService/Worker"
 
 // User in /api/stats/{btc_address}
 export interface UserInstantStats {

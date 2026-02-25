@@ -5,7 +5,7 @@ import componentStyles from "./support.module.css";
 
 export default function Support() {
   return (
-    <section className={componentStyles.suport}>
+    <section className={componentStyles.suport} style={{ background: "var(--bg-alt)" }}>
       <div className={styles.container}>
         <h2>Soutenir le projet</h2>
 

@@ -1,12 +1,12 @@
 export type Top = {
-    topBestSahres: TopBestShares[]
-    topHasshrate: TopHashrate[]
+    topBestShares: TopBestShares[]
+    topHashrate: TopHashrate[]
 }
 
 export type TopBestShares = {
     address: string
     workerCount: number
-    bestShare: number
+    bestshare: number
 }
 
 export type TopHashrate = {

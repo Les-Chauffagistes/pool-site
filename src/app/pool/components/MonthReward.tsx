@@ -1,12 +1,42 @@
 import TimeFormatter from "@/../lib/TimeFormatter";
 import UnitConverter from "@/../lib/UnitConverter";
-import { BestRecord } from "@/../models/BestRecord";
+import { BestRecord } from "../../../../models/PoolService/BestRecord";
 import styles from "../pool.module.css";
+import { ReactElement } from "react";
 
 
 export default function MonthReward({ record, month, year, reward }: Readonly<{ record?: BestRecord, month: number, year: number, reward: string[] }>) {
     const fullDate = new Date(year, month - 1);
     const isThisMonth = fullDate.getMonth() === new Date().getMonth();
+
+    let dot: ReactElement<HTMLSpanElement> | null = null;
+
+    if (isThisMonth) {
+        dot = <span style={{
+            backgroundColor: "var(--accent)",
+            borderRadius: 100,
+            width: 10,
+            height: 10,
+            boxShadow: "0 0 0 0 rgba(247,147,26,.7)",
+            marginLeft: 5
+        }} className={styles.pulsable} />
+    } else if (fullDate < new Date()) {
+        dot = <span style={{
+            backgroundColor: "green",
+            borderRadius: 100,
+            width: 10,
+            height: 10,
+            marginLeft: 5
+        }} />
+    } else {
+        dot = <span style={{
+            backgroundColor: "var(--text-muted)",
+            borderRadius: 100,
+            width: 10,
+            height: 10,
+            marginLeft: 5
+        }} />
+    }
 
     return (
         <div style={{
@@ -25,18 +55,11 @@ export default function MonthReward({ record, month, year, reward }: Readonly<{ 
                 gap: 10,
                 marginBottom: 10
             }}>
-                {isThisMonth && <span style={{
-                    backgroundColor: "var(--accent)",
-                    borderRadius: 100,
-                    width: 10,
-                    height: 10,
-                    boxShadow: "0 0 0 0 rgba(247,147,26,.7)",
-                    marginLeft: 5
-                }} className={styles.pulsable}/>
-                }
+                {dot}
+
                 <h3>{TimeFormatter.monthAndYear(fullDate)}</h3>
             </div>
-            <h4>{record &&UnitConverter.fromNumberToString(record.sdiff)}</h4>
+            <h4>{record && UnitConverter.fromNumberToString(record.sdiff)}</h4>
             <div style={{
                 display: "flex",
                 alignItems: "center",

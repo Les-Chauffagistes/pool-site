@@ -1,9 +1,10 @@
 import { Reward } from "../../models/API Payloads/Reward";
-import { BestRecord } from "../../models/BestRecord";
-import { Node } from "../../models/Node";
-import { Pings } from "../../models/Pings";
-import { PoolService } from "../../models/PoolService";
-import { Top } from "../../models/Top";
+import { BestRecord } from "../../models/PoolService/BestRecord";
+import { HashrateHistory } from "../../models/PoolService/HashrateHistory";
+import { Node } from "../../models/PoolService/Node";
+import { Pings } from "../../models/PoolService/Pings";
+import { PoolService } from "../../models/PoolService/PoolService";
+import { Top } from "../../models/PoolService/Top";
 
 
 
@@ -33,4 +34,8 @@ export async function getNode(): Promise<Node> {
 
 export async function getTop(): Promise<Top> {
     return await fetch(`${process.env.NEXT_PUBLIC_POOL_SERVICE_API_URL}/api/top`).then(res => res.json());
+}
+
+export async function getLegacyHashrateHistory(): Promise<HashrateHistory[]> {
+    return await fetch(`${process.env.NEXT_PUBLIC_POOL_SERVICE_API_URL}/api/hashrate`).then(res => res.json());
 }

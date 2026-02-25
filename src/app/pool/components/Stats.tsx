@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PoolService } from "../../../../models/PoolService";
+import { PoolService } from "../../../../models/PoolService/PoolService";
 import { getPoolBaseStats } from "@/app/api";
 import UnitConverter from "@/../lib/UnitConverter";
 import styles from "../pool.module.css"
