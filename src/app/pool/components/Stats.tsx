@@ -21,7 +21,7 @@ export default function Stats() {
         <div className={styles.grid + " " + styles.grid4} style={{ marginTop: 32 }}>
           {[
             ["Hashrate (1h)", poolStats ? UnitConverter.fromNumberToString(UnitConverter.fromStringToNumber(poolStats.hashrates.hashrate1hr)) + "H/s" : "—"],
-            ["Groupes actifs", poolStats ? poolStats.runtime.Users : "—"],
+            ["Pools de minage", poolStats ? poolStats.runtime.Users : "—"],
             ["Machines", poolStats ? poolStats.runtime.Workers : "—"],
             ["Frais", "0 %"],
           ].map(([label, value]) => (

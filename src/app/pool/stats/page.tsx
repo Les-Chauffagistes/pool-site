@@ -82,7 +82,7 @@ export default function StatsPage() {
         <main className={styles.pool} style={{ flex: 1 }}>
             <ThemeProvider theme={muiTheme}>
                 {/* Section 1 — Pool Overview */}
-                <section>
+                <section style={{paddingTop: 90}}>
                     <div className={styles.container}>
                         <h2>Vue d&apos;ensemble</h2>
                         <div className={styles.grid + " " + styles.grid4} style={{ marginTop: 24 }}>

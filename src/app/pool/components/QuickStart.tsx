@@ -7,7 +7,7 @@ export default function QuickStart() {
         <h2>Configurer en quelques minutes</h2>
 
         <div className={styles.grid + " " + styles.grid3} style={{ marginTop: 24 }}>
-          <p>3 modes, une seule pool : Solo · Team · Pool</p>
+          <p>3 modes, une seule solution : Solo · Team · Communautaire</p>
           <p>Données publiques. Règles claires.</p>
           <p>Pas de KYC.</p>
         </div>
