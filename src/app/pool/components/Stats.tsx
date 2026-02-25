@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Pool } from "@/../models/Pool";
+import { PoolService } from "../../../../models/PoolService";
 import { getPoolBaseStats } from "@/app/api";
 import UnitConverter from "@/../lib/UnitConverter";
 import styles from "../pool.module.css"
 
 export default function Stats() {
-  const [poolStats, setPoolStats] = useState<Pool | null>(null);
+  const [poolStats, setPoolStats] = useState<PoolService | null>(null);
 
   useEffect(() => {
     getPoolBaseStats().then(setPoolStats);
@@ -16,7 +16,7 @@ export default function Stats() {
   return (
     <section style={{ background: "linear-gradient(180deg, rgba(14, 14, 17, 0), var(--bg-main)" }}>
       <div className={styles.container}>
-        <h2>La pool, en activité</h2>
+        <h2>Chauffagistes, en activité</h2>
 
         <div className={styles.grid + " " + styles.grid4} style={{ marginTop: 32 }}>
           {[

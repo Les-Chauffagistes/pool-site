@@ -1,4 +1,4 @@
-export interface BestRecord {
+export type BestRecord = {
     month: string
     sdiff: number
     address: string

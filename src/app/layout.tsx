@@ -4,8 +4,8 @@ import Footer from "./components/Footer";
 
 
 export const metadata: Metadata = {
-  title: "Les Chauffagistes — Pool Bitcoin",
-  description: "Pool française de minage Bitcoin valorisant la chaleur. 0% fees.",
+  title: "Les Chauffagistes — Solution de minage Bitcoin",
+  description: "Pools françaises de minage Bitcoin valorisant la chaleur. 0% fees.",
 };
 
 export default function RootLayout({

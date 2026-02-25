@@ -10,7 +10,7 @@ export default function Support() {
         <h2>Soutenir le projet</h2>
 
         <p style={{ marginTop: 16, maxWidth: 600 }}>
-          La pool fonctionne sans frais. Les dons financent l’infrastructure, le développement et la cagnotte.
+          Nous fonctionons sans frais. Les dons financent l’infrastructure, le développement et la cagnotte.
         </p>
 
         <div style={{

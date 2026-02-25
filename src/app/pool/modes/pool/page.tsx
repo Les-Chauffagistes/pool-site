@@ -32,7 +32,7 @@ export default function Solo() {
                         <p style={{marginBottom: 10}}>Lorsque la pool communautaire minera un bloc, les mineurs recevront une récompense proportionelle au travail fourni selon la formule suivante</p>
                         <Code notCopiable>[Somme diff. de vos shares] / [Somme diff. du groupe]</Code>
                         <p style={{marginBottom: 10, marginTop: 10}}>Cette récompense théorique est consultable à n&apos;importe quel moment depuis le dashboard. Elle est actualisée toutes les 30 minutes</p>
-                        <p>La pool distribue 100% de la récompense de block et ne garde aucun frais</p>
+                        <p>Nous distribuons 100% de la récompense de block et ne gardons aucun frais</p>
                         <div style={{display: "flex", paddingTop: 20, justifyContent: "center"}}>
                             <Link href={HEATBOARD_URL + "/start/" + COMMUNITY_POOL_ADDRESS}>
                                 <button className="primary">

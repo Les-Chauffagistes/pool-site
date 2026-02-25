@@ -14,7 +14,7 @@ export default function Hero() {
           </h1>
 
           <p style={{ marginTop: 16, maxWidth: 520 }}>
-            Pool française de minage Bitcoin valorisant la chaleur des machines pour le chauffage,
+            Solution de minage Bitcoin Française valorisant la chaleur des machines pour le chauffage,
             sans frais sur les blocs.
           </p>
 
