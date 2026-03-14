@@ -7,6 +7,7 @@ import { ExternalLink } from "lucide-react";
 import { HEATBOARD_URL } from "@/app/constants/columns";
 
 const links = [
+    { label: "Pool", href: "/pool" },
     { label: "Stats", href: "/pool/stats" },
     { label: "Modes", href: "/pool/modes" },
     { label: "Dashboard", href: HEATBOARD_URL, external: true },
@@ -33,7 +34,7 @@ export default function Navbar() {
             border: "1px solid rgba(255, 255, 255, 0.08)",
             boxShadow: "0 4px 24px rgba(0, 0, 0, 0.3)",
         }}>
-            <Link href="/pool" style={{
+            <Link href="/" style={{
                 display: "flex",
                 alignItems: "center",
                 marginRight: 8,

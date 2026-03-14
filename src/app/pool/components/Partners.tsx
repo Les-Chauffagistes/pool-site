@@ -14,6 +14,10 @@ type Partner = {
   discount?: string;
 };
 
+type PartnersProps = {
+  embedded?: boolean;
+};
+
 const partners: Partner[] = [
   {
     name: "Silexperience",
@@ -79,36 +83,40 @@ function PartnerLogo({ partner }: Readonly<{ partner: Partner }>) {
   }
 
   return (
-    <div style={{
-      width: 48,
-      height: 48,
-      borderRadius: 10,
-      background: "var(--accent-soft)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: "1.2rem",
-      fontWeight: 800,
-      color: "var(--accent)",
-    }}>
+    <div
+      style={{
+        width: 48,
+        height: 48,
+        borderRadius: 10,
+        background: "var(--accent-soft)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "1.2rem",
+        fontWeight: 800,
+        color: "var(--accent)",
+      }}
+    >
       {partner.name.charAt(0)}
     </div>
   );
 }
 
 function PartnerCard({ partner }: Readonly<{ partner: Partner }>) {
-  const [Icon, setIcon] = useState<ForwardRefExoticComponent<LucideProps>>(Copy)
+  const [Icon, setIcon] = useState<ForwardRefExoticComponent<LucideProps>>(Copy);
 
   return (
-    <div style={{
-      background: "var(--bg-blue)",
-      padding: 24,
-      borderRadius: "var(--radius)",
-      border: "1px solid #323242",
-      display: "flex",
-      flexDirection: "column",
-      gap: 16,
-    }}>
+    <div
+      style={{
+        background: "var(--bg-blue)",
+        padding: 24,
+        borderRadius: "var(--radius)",
+        border: "1px solid #323242",
+        display: "flex",
+        flexDirection: "column",
+        gap: 16,
+      }}
+    >
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
         <PartnerLogo partner={partner} />
         <div>
@@ -120,7 +128,7 @@ function PartnerCard({ partner }: Readonly<{ partner: Partner }>) {
       {partner.promoCode && (
         <button
           onClick={async () => {
-            await navigator.clipboard.writeText(partner.promoCode!.toString())
+            await navigator.clipboard.writeText(partner.promoCode!.toString());
             setIcon(Check);
             setTimeout(() => setIcon(Copy), 1000);
           }}
@@ -137,22 +145,28 @@ function PartnerCard({ partner }: Readonly<{ partner: Partner }>) {
           }}
         >
           <Tag size={14} color="var(--accent)" />
-          <code style={{
-            color: "var(--accent)",
-            fontWeight: 700,
-            fontSize: "0.85rem",
-            flex: 1,
-            textAlign: "left",
-          }}>
+          <code
+            style={{
+              color: "var(--accent)",
+              fontWeight: 700,
+              fontSize: "0.85rem",
+              flex: 1,
+              textAlign: "left",
+            }}
+          >
             {partner.promoCode}
           </code>
-          <span style={{
-            fontWeight: 700,
-            fontSize: "0.85rem",
-            color: "var(--text-main)",
-          }}>
-            {partner.discount}
-          </span>
+          {partner.discount && (
+            <span
+              style={{
+                fontWeight: 700,
+                fontSize: "0.85rem",
+                color: "var(--text-main)",
+              }}
+            >
+              {partner.discount}
+            </span>
+          )}
           <Icon size={14} color="var(--text-muted)" />
         </button>
       )}
@@ -160,6 +174,7 @@ function PartnerCard({ partner }: Readonly<{ partner: Partner }>) {
       <a
         href={partner.url}
         target="_blank"
+        rel="noreferrer"
         style={{
           display: "flex",
           alignItems: "center",
@@ -176,20 +191,41 @@ function PartnerCard({ partner }: Readonly<{ partner: Partner }>) {
   );
 }
 
-export default function Partners() {
+export default function Partners({ embedded = false }: Readonly<PartnersProps>) {
   return (
-    <section style={{ background: "var(--bg-alt)" }}>
-      <div className={styles.container}>
+    <section
+      style={{
+        background: embedded ? "transparent" : "var(--bg-alt)",
+        width: "100%",
+      }}
+    >
+      <div
+        className={!embedded ? styles.container : undefined}
+        style={
+          embedded
+            ? {
+                width: "100%",
+                maxWidth: 1100,
+                margin: "0 auto",
+                padding: "0 24px 56px",
+              }
+            : undefined
+        }
+      >
         <h2>Écosystème</h2>
 
         <h3 style={{ marginTop: 32, marginBottom: 16 }}>Nos partenaires</h3>
         <div className={styles.grid + " " + styles.grid3}>
-          {partners.map(p => <PartnerCard key={p.name} partner={p} />)}
+          {partners.map((p) => (
+            <PartnerCard key={p.name} partner={p} />
+          ))}
         </div>
 
         <h3 style={{ marginTop: 48, marginBottom: 16 }}>Ils utilisent nos services</h3>
         <div className={styles.grid + " " + styles.grid3}>
-          {clients.map(p => <PartnerCard key={p.name} partner={p} />)}
+          {clients.map((p) => (
+            <PartnerCard key={p.name} partner={p} />
+          ))}
         </div>
 
         <div style={{ marginTop: 40 }}>
