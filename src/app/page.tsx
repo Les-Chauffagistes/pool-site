@@ -70,26 +70,31 @@ export default function HomePage() {
 
         <div className={styles.communityLinks}>
             <a href="https://discord.gg/5s9xfbZPBR" target="_blank" rel="noopener noreferrer">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://cdn.simpleicons.org/discord" alt="Discord" width="28" height="28" />
                 <span>Discord</span>
             </a>
 
             <a href="https://x.com/Chauff_pool" target="_blank" rel="noopener noreferrer">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://cdn.simpleicons.org/x" alt="X" width="28" height="28" />
                 <span>X</span>
             </a>
 
             <a href="https://learn.chauffagistes-btc.fr/" target="_blank" rel="noopener noreferrer">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://cdn.simpleicons.org/wikipedia" alt="Wiki" width="28" height="28" />
                 <span>Wiki</span>
             </a>
 
             <a href="https://www.youtube.com/@chauffagistes" target="_blank" rel="noopener noreferrer">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://cdn.simpleicons.org/youtube" alt="YouTube" width="28" height="28" />
                 <span>YouTube</span>
             </a>
 
             <a href="/pool">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://cdn.simpleicons.org/bitcoin" alt="Pool" width="28" height="28" />
                 <span>La pool</span>
             </a>
