@@ -9,18 +9,20 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - "5433:5432" # Port de la db
+      - "127.0.0.1:5433:5432"
 
-  # app:
-  #   image: chauffagistes-site:v1
-  #   container_name: app
-  #   depends_on:
-  #     - postgres
-  #   environment:
-  #     DATABASE_URL: postgresql://postgres:password@postgres:5432/chauffagistes
-  #   restart: unless-stopped
-  #   ports:
-  #      - "3002:3002" # Port de l'application
+  pool-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/chauffagistes
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3002:3002"
 
   # nginx:
   #   image: nginx:stable
