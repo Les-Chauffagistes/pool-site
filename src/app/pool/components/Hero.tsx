@@ -1,15 +1,22 @@
 import Image from "next/image";
 import styles from "../pool.module.css";
 
-
 export default function Hero() {
   return (
-
     <section style={{ minHeight: 500, paddingTop: 90 }}>
-      <div style={{display: 'flex', alignItems: 'center'}}
+      <div
         className={styles.container}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 24,
+          flexWrap: "wrap",
+        }}
       >
-        <div className={styles.fadeUp} style={{flex: 1}}>
+        <div
+          className={styles.fadeUp}
+          style={{ flex: 1, minWidth: 280 }}
+        >
           <h1>
             Minage Bitcoin collectif.
             <br />
@@ -27,9 +34,29 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <Image src="/brand-icon.png" width={300} height={300} alt="Chauffagistes" unoptimized/>
+
+        <div
+          style={{
+            flexShrink: 0,
+            width: "100%",
+            maxWidth: 300,
+            margin: "0 auto",
+          }}
+        >
+          <Image
+            src="/brand-icon.png"
+            width={300}
+            height={300}
+            alt="Chauffagistes"
+            unoptimized
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+            }}
+          />
+        </div>
       </div>
     </section>
-
   );
 }
