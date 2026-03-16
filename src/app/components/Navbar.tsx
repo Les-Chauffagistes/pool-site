@@ -49,7 +49,12 @@ export default function Navbar() {
             </Link>
 
             {links.map(link => {
-                const isActive = !link.external && path.startsWith(link.href);
+                const isActive =
+                    !link.external &&
+                    (
+                        (link.href === "/pool" && path === "/pool") ||
+                        (link.href !== "/pool" && path.startsWith(link.href))
+                    );
 
                 return (
                     <Link

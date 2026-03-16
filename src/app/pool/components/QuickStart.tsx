@@ -13,7 +13,7 @@ export default function QuickStart() {
         </div>
 
         <div style={{ marginTop: 32 }}>
-          <a className={styles.button} href="/modes">
+          <a className={styles.button} href="/pool/modes">
             Voir les configurations
           </a>
         </div>

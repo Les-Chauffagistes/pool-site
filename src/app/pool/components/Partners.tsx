@@ -227,12 +227,13 @@ export default function Partners({ embedded = false }: Readonly<PartnersProps>) 
             <PartnerCard key={p.name} partner={p} />
           ))}
         </div>
-
-        <div style={{ marginTop: 40 }}>
+        
+        {/*à voir ce qu'on fait avec cette page */}
+        {/* <div style={{ marginTop: 40 }}>
           <a className={styles.button} href="/partners">
             Intégrer l&apos;écosystème
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

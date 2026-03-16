@@ -1,6 +1,6 @@
 export interface PoolRuntime {
     runtime: number
-    lastupdate: string
+    lastupdate: number
     Users: number
     Workers: number
     Idle: number
