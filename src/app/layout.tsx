@@ -17,7 +17,13 @@ export const metadata: Metadata = {
   icons: {
     icon: "/brand-icon.png",
     shortcut: "/brand-icon.png",
-    apple: "/brand-icon.png",
+
+    apple: [
+      { url: "/apple-touch-icon.png" },
+      { url: "/apple-touch-icon-128.png", sizes: "128x128" },
+      { url: "/apple-touch-icon-256.png", sizes: "256x256" },
+      { url: "/apple-touch-icon-512.png", sizes: "512x512" },
+    ],
   },
 
   openGraph: {
