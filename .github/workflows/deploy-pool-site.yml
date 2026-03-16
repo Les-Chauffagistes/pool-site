@@ -47,8 +47,8 @@ jobs:
 
       - name: Add VPS to known_hosts
         run: |
-          ssh-keyscan -H ${{ secrets.POOL_SITE_IP }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p ${{ secrets.POOL_SITE_PORT }} -H ${{ secrets.POOL_SITE_IP }} >> ~/.ssh/known_hosts
 
       - name: Deploy on server
         run: |
-          ssh -i ~/.ssh/id_ed25519 deploy@${{ secrets.POOL_SITE_IP }}
+          ssh -p ${{ secrets.POOL_SITE_PORT }} -i ~/.ssh/id_ed25519 deploy@${{ secrets.POOL_SITE_IP }}
