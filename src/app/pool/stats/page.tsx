@@ -120,7 +120,7 @@ export default function StatsPage() {
                             </div>
                             <Card
                                 title="Dernière maj"
-                                value={poolServiceStats ? TimeFormatter.full(new Date(poolServiceStats.runtime.lastupdate)) : "—"}
+                                  value={poolServiceStats ? TimeFormatter.full(new Date(poolServiceStats.runtime.lastupdate * 1000)) : "—"}
                                 Icon={Clock}
                             />
                         </div>

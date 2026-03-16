@@ -16,7 +16,7 @@ export default function Why() {
         </p>
 
         <div style={{ marginTop: 32 }}>
-          <Link href="/about" className={styles.button}>
+          <Link href="/" className={styles.button}>
             En savoir plus
           </Link>
         </div>

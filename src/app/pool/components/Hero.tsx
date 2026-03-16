@@ -22,7 +22,7 @@ export default function Hero() {
           </p>
 
           <div style={{ marginTop: 32 }}>
-            <a className={styles.button} href="/start">
+            <a className={styles.button} href="/pool/modes">
               Commencer à miner
             </a>
           </div>
