@@ -64,7 +64,7 @@ const partners: Partner[] = [
 const clients: Partner[] = [
   {
     name: "BEF",
-    url: "https://www.bitcoin-energy-forum.com",
+    url: "https://breizhbitcoin.com/bitcoin-economic-forum/",
     image: "/bef.jpg",
     description: "Pool hébergée sur notre infrastructure",
   },
