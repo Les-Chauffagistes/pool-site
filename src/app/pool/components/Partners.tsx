@@ -56,6 +56,8 @@ const partners: Partner[] = [
     url: "https://drink-bob.com",
     image: "/bob.jpg",
     description: "Récompenses mensuelles pour les mineurs",
+    promoCode: "CHAUFFAGISTES10",
+    discount: "-10%",
   },
 ];
 
