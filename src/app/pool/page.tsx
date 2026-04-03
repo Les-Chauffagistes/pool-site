@@ -7,6 +7,7 @@ import Community from "@/app/pool/components/Community";
 import Support from "./components/Support";
 import Partners from "@/app/pool/components/Partners";
 import NoisyBackground from "../components/NoisyBackground";
+import CurrentMonthRewardBanner from "./components/CurrentMonthRewardBanner";
 
 import styles from "./pool.module.css";
 
@@ -15,8 +16,10 @@ export default function Home() {
     <main className={styles.pool}>
       <NoisyBackground noiseOpacity={45}>
         <Hero />
+        <CurrentMonthRewardBanner />
         <Stats />
       </NoisyBackground>
+
       <QuickStart />
       <Partners />
       <Why />

@@ -28,9 +28,75 @@ export default function Hero() {
             sans frais sur les blocs.
           </p>
 
-          <div style={{ marginTop: 32 }}>
+          <div
+            style={{
+              marginTop: 32,
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              flexWrap: "wrap",
+            }}
+          >
             <a className={styles.button} href="/pool/modes">
               Commencer à miner
+            </a>
+
+            <a
+              href="https://shares-viewer.chauffagistes-btc.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                padding: "10px 14px",
+                borderRadius: 14,
+                textDecoration: "none",
+                color: "inherit",
+                background: "rgba(255, 255, 255, 0.05)",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                transition: "all 0.15s ease",
+              }}
+            >
+              <span
+                style={{
+                  padding: "3px 8px",
+                  borderRadius: 999,
+                  background: "var(--accent)",
+                  color: "#000",
+                  fontSize: "0.7rem",
+                  fontWeight: 800,
+                  flexShrink: 0,
+                }}
+              >
+                NEW
+              </span>
+
+              <span
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  lineHeight: 1.2,
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "0.9rem",
+                    fontWeight: 700,
+                  }}
+                >
+                  Shares Viewer
+                </span>
+
+                <span
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "var(--text-muted)",
+                  }}
+                >
+                  Quand le minage devient un jeu : Bitcoin Workers Life
+                </span>
+              </span>
             </a>
           </div>
         </div>
