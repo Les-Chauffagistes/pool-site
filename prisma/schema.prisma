@@ -8,9 +8,10 @@ datasource db {
 }
 
 model rewards {
+  id          Int    @id @default(autoincrement())
   year        Int
   month       Int
   reward_name String
 
-  @@id([year, month, reward_name], map: "rewards_pk")
+  @@unique([year, month, reward_name], map: "rewards_year_month_reward_name_key")
 }
