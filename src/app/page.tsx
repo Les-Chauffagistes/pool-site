@@ -68,6 +68,29 @@ export default function HomePage() {
         </div>
       </section>
 
+        <div className={styles.toolsLinks}>
+          <a
+            href="https://heatboard.chauffagistes-btc.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://cdn.simpleicons.org/speedtest" alt="Dashboard" width="28" height="28" />
+            <span>Dashboard</span>
+          </a>
+
+          <a
+            href="https://shares-viewer.chauffagistes-btc.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://cdn.simpleicons.org/bitcoin" alt="Shares Viewer" width="28" height="28" />
+            <span>Shares Viewer</span>
+            <span className={styles.newBadgeInline}>NEW</span>
+          </a>
+        </div>
+
         <div className={styles.communityLinks}>
             <a href="https://discord.gg/5s9xfbZPBR" target="_blank" rel="noopener noreferrer">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
