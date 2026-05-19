@@ -1,0 +1,19 @@
+name: Build app
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-push:
+    uses: les-chauffagistes/deploy/.github/workflows/build.yml@develop
+    with:
+      service-name: pool-site
+      build-args: |
+        NEXT_PUBLIC_POOL_SERVICE_API_URL=https://chauffagistes-pool.fr:3000
+        NEXT_PUBLIC_HISTORY_SERVER_API_URL=https://history.chauffagistes-btc.fr
+    secrets: inherit
