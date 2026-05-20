@@ -1,13 +1,4 @@
 #!/bin/sh
 set -e
-
-echo "DATABASE_URL=$DATABASE_URL"
-
-echo "Lancement des migrations Prisma..."
-until node node_modules/prisma/build/index.js migrate deploy; do
-  echo "DB pas prête, retry..."
-  sleep 2
-done
-
-echo "Migrations OK, démarrage Next.js..."
+export DATABASE_URL=postgresql://${DB_USER}:$(cat /run/secrets/db_password)@${DB_HOST}:5432/${DB_NAME}
 exec node server.js
