@@ -25,16 +25,13 @@ ENV NODE_ENV=production
 RUN apk add --no-cache openssl libssl3
 
 COPY --from=build /app/.next/standalone ./
-COPY --from=build /app/.next/static ./.next/static
-COPY --from=build /app/public ./public
-COPY --from=build /app/prisma ./prisma
-COPY --from=build /app/prisma.config.ts ./prisma.config.ts
-COPY --from=build /app/src/generated ./src/generated
-COPY --from=build /app/package.json ./
+COPY --from=build /app/.next/static     ./.next/static
+COPY --from=build /app/public           ./public
+COPY --from=build /app/src/generated    ./src/generated
+# prisma.config.ts et package.json sont dans le standalone déjà
 
 COPY docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
 
 EXPOSE 3002
-
 ENTRYPOINT ["sh", "docker-entrypoint.sh"]
