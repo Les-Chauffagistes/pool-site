@@ -8,8 +8,9 @@ RUN npm run build
 
 FROM node:22-alpine AS migrator
 WORKDIR /app
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/prisma       ./prisma
+COPY --from=build /app/node_modules      ./node_modules
+COPY --from=build /app/prisma            ./prisma
+COPY --from=build /app/prisma.config.ts  ./
 
 CMD ["sh", "-c", "\
   export DATABASE_URL=postgresql://${DB_USER}:$(cat /run/secrets/db_password)@${DB_HOST}:5432/${DB_NAME} && \
