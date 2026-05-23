@@ -11,4 +11,4 @@ until [ -f /migrations/done ] && \
 done
 
 echo "Migrations OK, starting..."
-exec node server.js
+exec node server.js -H 0.0.0.0
