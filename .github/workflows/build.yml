@@ -2,18 +2,24 @@ name: Build app
 
 on:
   push:
-    branches:
-      - main
+    branches: ["**"]
+    tags: ["v*.*.*"]
   pull_request:
-    branches:
-      - main
 
 jobs:
-  build-push:
+  build-app:
     uses: les-chauffagistes/deploy/.github/workflows/build.yml@develop
     with:
       service-name: pool-site
+      build-target: runner
       build-args: |
         NEXT_PUBLIC_POOL_SERVICE_API_URL=https://chauffagistes-pool.fr:3000
         NEXT_PUBLIC_HISTORY_SERVER_API_URL=https://history.chauffagistes-btc.fr
+    secrets: inherit
+
+  build-migrator:
+    uses: les-chauffagistes/deploy/.github/workflows/build.yml@develop
+    with:
+      service-name: pool-site-migrator
+      build-target: migrator
     secrets: inherit

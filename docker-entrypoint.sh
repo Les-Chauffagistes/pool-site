@@ -1,13 +1,14 @@
 #!/bin/sh
 set -e
 
-echo "DATABASE_URL=$DATABASE_URL"
+export DATABASE_URL=postgresql://${DB_USER}:$(cat /run/secrets/db_password)@${DB_HOST}:5432/${DB_NAME}
 
-echo "Lancement des migrations Prisma..."
-until node node_modules/prisma/build/index.js migrate deploy; do
-  echo "DB pas prête, retry..."
+echo "Waiting migration flag..."
+until [ -f /migrations/done ] && \
+  [ "$(ls prisma/migrations/ | grep -v migration_lock.toml | sort | sha256sum | cut -d' ' -f1)" = "$(cat /migrations/done)" ]; do
+  echo "Migration(s) not applied, retry..."
   sleep 2
 done
 
-echo "Migrations OK, démarrage Next.js..."
-exec node server.js
+echo "Migrations OK, starting..."
+exec node server.js -H 0.0.0.0
