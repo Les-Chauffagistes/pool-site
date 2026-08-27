@@ -14,7 +14,6 @@ jobs:
       build-target: runner
       build-args: |
         NEXT_PUBLIC_POOL_SERVICE_API_URL=https://chauffagistes-pool.fr:3000
-        NEXT_PUBLIC_HISTORY_SERVER_API_URL=https://history.chauffagistes-btc.fr
     secrets: inherit
 
   build-migrator:
