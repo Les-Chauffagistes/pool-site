@@ -1,7 +1,7 @@
 FROM node:22-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 COPY . .
 
 ARG NEXT_PUBLIC_POOL_SERVICE_API_URL
