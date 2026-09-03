@@ -15,10 +15,3 @@ jobs:
       build-args: |
         NEXT_PUBLIC_POOL_SERVICE_API_URL=https://chauffagistes-pool.fr:3000
     secrets: inherit
-
-  build-migrator:
-    uses: les-chauffagistes/deploy/.github/workflows/build.yml@develop
-    with:
-      service-name: pool-site-migrator
-      build-target: migrator
-    secrets: inherit
