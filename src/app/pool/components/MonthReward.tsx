@@ -7,7 +7,8 @@ import { ReactElement } from "react";
 
 export default function MonthReward({ record, month, year, reward }: Readonly<{ record?: BestRecord, month: number, year: number, reward: string[] }>) {
     const fullDate = new Date(year, month - 1);
-    const isThisMonth = fullDate.getMonth() === new Date().getMonth();
+    const now = new Date();
+    const isThisMonth = fullDate.getMonth() === now.getMonth() && fullDate.getFullYear() === now.getFullYear();
 
     let dot: ReactElement<HTMLSpanElement> | null = null;
 
@@ -20,7 +21,7 @@ export default function MonthReward({ record, month, year, reward }: Readonly<{ 
             boxShadow: "0 0 0 0 rgba(247,147,26,.7)",
             marginLeft: 5
         }} className={styles.pulsable} />
-    } else if (fullDate < new Date()) {
+    } else if (fullDate < now) {
         dot = <span style={{
             backgroundColor: "green",
             borderRadius: 100,
