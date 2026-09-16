@@ -12,7 +12,7 @@ export default function Footer() {
             <div className={styles.inner}>
                 <div className={styles.brand}>
                     <Link href="/pool">
-                        <Image src="/brand-icon.png" width={32} height={32} alt="Chauffagistes" style={{ borderRadius: "50%" }} />
+                        <Image src="/brand-icon.png" width={32} height={32} alt="Les Chauffagistes" style={{ borderRadius: "50%" }} />
                         <h3>Chauffagistes Pool</h3>
                     </Link>
                     <p>
@@ -22,7 +22,7 @@ export default function Footer() {
 
                 <div className={styles.category}>
                     <h4>Réseaux</h4>
-                    <Link href="https://discord.gg/7fvxDPjRgj" target="_blank">
+                    <Link href="https://discord.gg/5s9xfbZPBR" target="_blank">
                         <Image src="/Discord-Symbol-White.svg" width={iconSize} height={iconSize} alt="Discord" />
                         <p>Discord</p>
                     </Link>

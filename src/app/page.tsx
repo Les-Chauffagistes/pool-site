@@ -32,7 +32,7 @@ export default function HomePage() {
               src="/brand-icon.png"
               width={180}
               height={180}
-              alt="Chauffagistes"
+              alt="Les Chauffagistes"
               priority
             />
 
@@ -75,7 +75,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://cdn.simpleicons.org/speedtest" alt="Dashboard" width="28" height="28" />
+            <img src="https://cdn.simpleicons.org/speedtest" alt="Dashboard Les Chauffagistes" width="28" height="28" />
             <span>Dashboard</span>
           </a>
 
@@ -85,7 +85,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://cdn.simpleicons.org/bitcoin" alt="Shares Viewer" width="28" height="28" />
+            <img src="https://cdn.simpleicons.org/bitcoin" alt="Shares Viewer Les Chauffagistes" width="28" height="28" />
             <span>Shares Viewer</span>
             <span className={styles.newBadgeInline}>NEW</span>
           </a>
@@ -118,7 +118,7 @@ export default function HomePage() {
 
             <a href="/pool">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://cdn.simpleicons.org/bitcoin" alt="Pool" width="28" height="28" />
+                <img src="https://cdn.simpleicons.org/bitcoin" alt="La Pool Les Chauffagistes" width="28" height="28" />
                 <span>La pool</span>
             </a>
         </div>

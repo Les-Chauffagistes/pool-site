@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/app/pool/components/Hero";
 import Stats from "./components/Stats";
 import QuickStart from "@/app/pool/components/QuickStart";
@@ -10,6 +11,15 @@ import NoisyBackground from "../components/NoisyBackground";
 import CurrentMonthRewardBanner from "./components/CurrentMonthRewardBanner";
 
 import styles from "./pool.module.css";
+
+export const metadata: Metadata = {
+  title: "La Pool",
+  description:
+    "Rejoignez la pool de minage Bitcoin Les Chauffagistes à 0% de frais et valorisez la chaleur de vos machines.",
+  alternates: {
+    canonical: "/pool",
+  },
+};
 
 export default function Home() {
   return (

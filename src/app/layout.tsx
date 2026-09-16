@@ -14,6 +14,10 @@ export const metadata: Metadata = {
 
   metadataBase: new URL("https://chauffagistes-btc.fr"),
 
+  alternates: {
+    canonical: "/",
+  },
+
   icons: {
     icon: "/brand-icon.png",
     shortcut: "/brand-icon.png",
@@ -58,6 +62,32 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Les Chauffagistes",
+    alternateName: "Chauffagistes Pool",
+    url: "https://chauffagistes-btc.fr",
+    logo: "https://chauffagistes-btc.fr/brand-icon.png",
+    description:
+      "Les Chauffagistes est un projet communautaire autour du minage Bitcoin valorisant la chaleur des machines pour le chauffage.",
+    sameAs: [
+      "https://discord.gg/5s9xfbZPBR",
+      "https://x.com/Chauff_pool",
+      "https://www.youtube.com/@chauffagistes",
+      "https://github.com/Les-Chauffagistes",
+      "https://learn.chauffagistes-btc.fr",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Les Chauffagistes",
+    url: "https://chauffagistes-btc.fr",
+  },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -68,6 +98,10 @@ export default function RootLayout({
       <head>
         <script defer src="https://umami.chauffagistes-btc.fr/script.js" data-website-id="d51d4c76-7623-4191-8eeb-24fa47f97df4"></script>
         <meta name="theme-color" content="#cc640e" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
 
       <body>

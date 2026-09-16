@@ -43,7 +43,7 @@ export default function Navbar() {
                     src="/brand-icon.png"
                     width={28}
                     height={28}
-                    alt="Chauffagistes"
+                    alt="Les Chauffagistes"
                     style={{ borderRadius: "50%" }}
                 />
             </Link>
