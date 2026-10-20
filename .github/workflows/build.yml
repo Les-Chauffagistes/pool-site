@@ -12,6 +12,4 @@ jobs:
     with:
       service-name: pool-site
       build-target: runner
-      build-args: |
-        NEXT_PUBLIC_POOL_SERVICE_API_URL=https://chauffagistes-pool.fr:3000
     secrets: inherit
