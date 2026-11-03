@@ -8,10 +8,8 @@ on:
 
 jobs:
   build-app:
-    uses: les-chauffagistes/deploy/.github/workflows/build.yml@develop
+    uses: les-chauffagistes/deploy/.github/workflows/build.yml@be3b94140650519f067162409927358ea8b0723f
     with:
       service-name: pool-site
       build-target: runner
-      build-args: |
-        NEXT_PUBLIC_POOL_SERVICE_API_URL=https://chauffagistes-pool.fr:3000
     secrets: inherit

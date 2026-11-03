@@ -4,9 +4,6 @@ COPY package*.json ./
 RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 COPY . .
 
-ARG NEXT_PUBLIC_POOL_SERVICE_API_URL
-ENV NEXT_PUBLIC_POOL_SERVICE_API_URL=$NEXT_PUBLIC_POOL_SERVICE_API_URL
-
 RUN npx prisma generate
 RUN npm run build
 
