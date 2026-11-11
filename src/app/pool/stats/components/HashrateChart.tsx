@@ -49,6 +49,7 @@ export default function HashrateChart({
               date.toLocaleDateString("fr-FR", {
                 day: "2-digit",
                 month: "2-digit",
+                year: "2-digit"
               }),
             tickNumber: isMobile ? 3 : 6,
           },
