@@ -1,11 +1,25 @@
 "use client";
 
 import { LineChart } from "@mui/x-charts/LineChart";
-import { useTheme, useMediaQuery } from "@mui/material";
+import {
+  useTheme,
+  useMediaQuery,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
 import type { HashrateHistory } from "../../../../../models/PoolService/HashrateHistory";
 import UnitConverter from "@/../lib/UnitConverter";
 import componentStyles from "./hashrateChart.module.css";
 
+// Valeurs alignées sur les variables de globals.css (MUI ne résout pas var() ici)
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    background: { paper: "#1c1c22" },
+    text: { primary: "#f5f5f7", secondary: "#b3b3bd" },
+    divider: "#34343e",
+  },
+});
 
 export default function HashrateChart({
   data,
@@ -28,6 +42,7 @@ export default function HashrateChart({
     value != null ? `${UnitConverter.fromNumberToString(value)}H/s` : "—";
 
   return (
+    <ThemeProvider theme={darkTheme}>
     <div
       style={{
         width: "100%",
@@ -49,6 +64,7 @@ export default function HashrateChart({
               date.toLocaleDateString("fr-FR", {
                 day: "2-digit",
                 month: "2-digit",
+                year: "2-digit"
               }),
             tickNumber: isMobile ? 3 : 6,
           },
@@ -74,6 +90,7 @@ export default function HashrateChart({
             showMark: false,
             valueFormatter: formatHashrate,
             curve: "linear",
+            label: "Hashrate"
           },
         ]}
         height={isMobile ? 240 : 350}
@@ -100,5 +117,6 @@ export default function HashrateChart({
         }}
       />
     </div>
+    </ThemeProvider>
   );
 }
