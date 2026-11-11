@@ -66,9 +66,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-        <script defer src="https://umami.chauffagistes-btc.fr/script.js" data-website-id="d51d4c76-7623-4191-8eeb-24fa47f97df4"></script>
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="/config.js" />
+        <script defer src="https://umami.chauffagistes-btc.fr/script.js" data-website-id="5d4a53d1-1cca-4318-bbd5-2b632ef0c46a"></script>
         <meta name="theme-color" content="#cc640e" />
       </head>
 
