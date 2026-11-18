@@ -21,7 +21,7 @@ type PartnersProps = {
 const partners: Partner[] = [
   {
     name: "Silexperience",
-    url: "https://silexperience.company.site",
+    url: "https://silexperience.org",
     image: "/silexperience.jpg",
     description: "Matériel de minage",
     promoCode: "CHAUFFAGISTES",
