@@ -2,6 +2,7 @@
 set -e
 
 export DATABASE_URL=postgresql://${DB_USER}:$(cat /run/secrets/db_password)@${DB_HOST}:5432/${DB_NAME}
+export API_KEY=$(cat /run/secrets/pool_site_api_key)
 
 cat > public/config.js << CONF
 window.__CONFIG__ = {
