@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import poolStyles from "./pool/pool.module.css";
 import Partners from "./pool/components/Partners";
+import SantaHat from "./components/christmas/SantaHat";
 
 const features = [
   {
@@ -28,13 +29,15 @@ export default function HomePage() {
       <section className={styles.hero}>
         <div className={styles.container}>
           <div className={styles.heroInner}>
-            <Image
-              src="/brand-icon.png"
-              width={180}
-              height={180}
-              alt="Chauffagistes"
-              priority
-            />
+            <SantaHat>
+              <Image
+                src="/brand-icon.png"
+                width={180}
+                height={180}
+                alt="Chauffagistes"
+                priority
+              />
+            </SantaHat>
 
             <div className={styles.heroText}>
               <p className={styles.eyebrow}>Communauté Bitcoin & chaleur utile</p>

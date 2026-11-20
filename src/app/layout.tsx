@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Christmas from "./components/christmas/Christmas";
 
 export const metadata: Metadata = {
   title: {
@@ -80,6 +81,7 @@ export default function RootLayout({
             minHeight: "100dvh",
           }}
         >
+          <Christmas />
           <Navbar />
           {children}
           <Footer />

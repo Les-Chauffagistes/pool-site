@@ -64,6 +64,7 @@ export default function Footer() {
             <div className={styles.bottom}>
                 <p>&copy; 2024 — 2026 Les Chauffagistes</p>
                 <p>Bitcoin mining & chaleur utile</p>
+                <p className="xmas-only xmas-greeting">Joyeuses fêtes : que vos mineurs vous gardent au chaud cet hiver</p>
             </div>
         </footer>
     );

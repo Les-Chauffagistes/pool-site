@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../pool.module.css";
+import SantaHat from "../../components/christmas/SantaHat";
 
 export default function Hero() {
   return (
@@ -109,18 +110,20 @@ export default function Hero() {
             margin: "0 auto",
           }}
         >
-          <Image
-            src="/brand-icon.png"
-            width={300}
-            height={300}
-            alt="Chauffagistes"
-            unoptimized
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-            }}
-          />
+          <SantaHat>
+            <Image
+              src="/brand-icon.png"
+              width={300}
+              height={300}
+              alt="Chauffagistes"
+              unoptimized
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+              }}
+            />
+          </SantaHat>
         </div>
       </div>
     </section>
